@@ -1,0 +1,35 @@
+    <div class="slide-60-wrapper" layout layout-algin="center center">
+        <div class="slide" layout layout-align="center center">
+            <div class="slide-title">
+                <span class="fs-display-2 display-block">Login</span>
+            </div>
+            <div class="slide-content">
+                <div flex-container="column" flex-gutter="24">
+                    <div flex-item>
+                        <lx-text-field label="Email" error="emailValidation(user.email)">
+                            <input type="email" ng-model="reservationModel.email">
+                        </lx-text-field>
+                    </div>
+
+                    <div flex-item>
+                        <lx-text-field label="Password">
+                            <input type="password" ng-model="reservationModel.password">
+                        </lx-text-field>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-button-section">
+                <div layout="row">
+                    <div class="left-section" flex="33">
+                    </div>
+                    <div flex="33"></div>
+                    <div class="right-section" flex="33">
+                        <button class="btn btn--l btn--raised bgc-pink-500"
+                                lx-ripple="pink-100"
+                                ui-sref="createReservation.cinemaSelection"
+                                ng-click="SlideChangeButtonClick('slide-left')">Cinemas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

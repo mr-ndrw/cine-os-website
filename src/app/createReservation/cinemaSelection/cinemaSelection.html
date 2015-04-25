@@ -1,0 +1,65 @@
+<div class="slide-70-wrapper">
+    <div class="slide" layout layout-align="center center">
+        <div class="slide-title">
+            <span class="fs-display-2 display-block">Cinema</span>
+        </div>
+        <div class="slide-content">
+            <div flex-container="column" flex-gutter="44">
+                <div flex-item>
+                    <div flex-container="row" flex-gutter="24">
+                        <div flex-item>
+                            <lx-select ng-model="reservationModel.region"
+                                       placeholder="Regions"
+                                       choices="regions"
+                                       change="RegionCbSelect(newValue, oldValue)"
+                                       floating-label>
+                                <lx-select-selected>
+                                    {{ $selected.regionName }}
+                                </lx-select-selected>
+
+                                <lx-select-choices>
+                                    {{ $choice.regionName }}
+                                </lx-select-choices>
+                            </lx-select>
+                        </div>
+                        <div flex-item>
+                            <lx-select ng-model="reservationModel.cinema"
+                                       placeholder="Cinemas"
+                                       choices="cinemasInRegion"
+                                       floating-label>
+                                <lx-select-selected>
+                                    {{ $selected.cinemaName }}, {{ $selected.address.city}}
+                                </lx-select-selected>
+
+                                <lx-select-choices>
+                                    {{ $choice.cinemaName }}, {{ $choice.address.street}} - {{ $choice.address.city}}
+                                </lx-select-choices>
+                            </lx-select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="slide-button-section">
+                <div layout="row">
+                    <div class="left-section" flex="33">
+                        <button class="btn btn--l btn--raised bgc-pink-500"
+                                lx-ripple="pink-100"
+                                ui-sref="createReservation.userAuthorization"
+                                ng-click="SlideChangeButtonClick('slide-right')">Login
+                        </button>
+                    </div>
+                    <div flex="33"></div>
+                    <div class="right-section" flex="33">
+                        <button class="btn btn--l btn--raised bgc-pink-500"
+                                lx-ripple="pink-100"
+                                ng-click="SlideChangeButtonClick('slide-left')"
+                                ui-sref="createReservation.filmSelection"
+                                ng-disabled="isEverythingSelected">Films
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

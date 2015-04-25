@@ -1,0 +1,10 @@
+$cinema-info-height-transition-time: 1.25s;
+
+#cinema-info{
+  height: auto;
+  -webkit-transition: all $cinema-info-height-transition-time;
+  -moz-transition: all $cinema-info-height-transition-time;
+  -ms-transition: all $cinema-info-height-transition-time;
+  -o-transition: all $cinema-info-height-transition-time;
+  transition: all $cinema-info-height-transition-time;
+}

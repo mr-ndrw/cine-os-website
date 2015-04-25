@@ -1,0 +1,115 @@
+<div class="slide-80-wrapper">
+    <div class="slide" layout layout-align="center center">
+        <div class="slide-title">
+            <span class="fs-display-2 display-block">Film</span>
+            <span class="fs-subhead display-block">Which film interests you?</span>
+        </div>
+        <div class="slide-content">
+            <div flex-container="column" flex-gutter="44">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-around;align-items: center;">
+                    <div class="card-and-dialog"
+                         ng-repeat="film in filmsForChosenCinema"
+                         data-counter="{{$index}}">
+                        <div class="card-wrapper">
+                            <div class="card">
+                                <div class="card__img card__img--top">
+                                    <img src="{{film.posterpath}}">
+                                    <span class="fs-headline tc-white-1 display-block shadowed-text">{{film.title}}</span>
+                                </div>
+
+                                <div class="p+">
+                                    <span class="fs-subhead tc-black-2 display-block">{{film.director}}</span>
+
+                                    <div class="paragraph fs-body-1">
+                                        <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+                                            {{film.description}}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="card__actions">
+                                    <button class="btn btn--s btn--black btn--flat"
+                                            lx-ripple>Choose
+                                    </button>
+                                    <button class="btn btn--s btn--pink btn--flat"
+                                            lx-ripple
+                                            ng-click="openFilmDetailsDialog($index)">Show Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <lx-dialog class="dialog dialog--l"
+                                   id="{{$index}}"
+                                   auto-close="true"
+                                   onclose="closeFilmDetailsDialog()"
+                                   onscrollend="scrollEndDialog()">
+                            <div class="dialog__header background-image-header" style="background-image: url('{{film.posterpath}}')">
+                                <div class="toolbar pl++">
+                                    <span class="toolbar__label tc-white fs-title shadowed-text">{{film.title}}</span>
+                                </div>
+                            </div>
+                            <div class="dialog__content">
+                                <div class="p++">
+                                    <span class="fs-subhead tc-grey-500">{{film.year}} film</span>
+                                    <div flex-container="column" flex-gutter="48">
+                                        <div flex-item>
+                                            <div flex-container="row" flex-gutter="24">
+                                                <div flex-item>
+                                            <span class="fs-subhead">{{film.description}}</span>
+                                                </div>
+                                                <div flex-item>
+                                                    <div>
+                                                        <span class="fs-subhead" style="font-weight: bold;">Director: </span>
+                                                        <span class="fs-subhead">{{film.director}}</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="fs-subhead" style="font-weight: bold;">Genre:</span>
+                                                        <span class="fs-subhead">{{film.genre}}</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="fs-subhead" style="font-weight: bold;">Actors:</span>
+                                            <span class="fs-subhead">
+                                                <div ng-repeat="actor in film.actors" style="display:inline;">
+                                                    <i ng-if="!$last">{{actor.name}}, </i>
+                                                    <i ng-if="$last">{{actor.name}}</i>
+                                                </div>
+                                            </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog__actions">
+                                <button class="btn btn--l btn--black btn--flat" lx-ripple lx-dialog-close>Close
+                                </button>
+                                <button class="btn btn--l btn--pink btn--flat" lx-ripple>Choose</button>
+                            </div>
+                        </lx-dialog>
+                    </div>
+
+                </div>
+            </div>
+            <div class="slide-button-section">
+                <div layout="row">
+                    <div class="left-section" flex="33">
+                        <button class="btn btn--l btn--raised bgc-pink-500"
+                                lx-ripple="pink-100"
+                                ui-sref="createReservation.cinemaSelection"
+                                ng-click="SlideChangeButtonClick('slide-right')">Cinema
+                        </button>
+                    </div>
+                    <div flex="33"></div>
+                    <div class="right-section" flex="33">
+                        <button class="btn btn--l btn--raised bgc-pink-500"
+                                lx-ripple="pink-100"
+                                ng-click="SlideChangeButtonClick('slide-left')"
+                                ng-disabled="isEverythingSelected">Projection
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

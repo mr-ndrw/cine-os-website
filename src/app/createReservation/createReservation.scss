@@ -1,0 +1,63 @@
+//  Slide left
+
+$slide-animation-speed: 0.75s;
+
+
+.create-reservation-ui-view{
+  position: relative;
+}
+
+.slide-left.ng-enter, .slide-left.ng-leave{
+  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $slide-animation-speed;
+}
+
+.slide-left.ng-enter{
+  opacity: 1;
+  transform: translateX(100%);
+  position: absolute;
+}
+
+.slide-left.ng-enter.ng-enter-active{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-left.ng-leave{
+  opacity: 1;
+  transform: translateX(0);
+  position: absolute;
+}
+
+.slide-left.ng-leave.ng-leave-active{
+  opacity: 0;
+  transform: translateX(-100%);
+  position: absolute;
+}
+
+//  Slide right
+
+.slide-right.ng-enter, .slide-right.ng-leave{
+  transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) $slide-animation-speed;
+}
+
+.slide-right.ng-enter{
+  opacity: 0;
+  transform: translateX(-100%);
+  position: absolute;
+}
+
+.slide-right.ng-enter.ng-enter-active{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right.ng-leave{
+  opacity: 1;
+  transform: translateX(0);
+  position: absolute;
+}
+
+.slide-right.ng-leave.ng-leave-active{
+  opacity: 0;
+  transform: translateX(100%);
+}
