@@ -1,0 +1,31 @@
+#seat-pane{
+}
+
+.information{
+  display: inline-block;
+
+  .seat-info{
+    width: 50%;
+  }
+}
+
+.button-info{
+  tr{
+    padding: 10px;
+    td{
+      padding: 10px;
+    }
+  }
+
+}
+
+.seat-row{
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+.seat-container{
+  display: inline-block;
+  margin: 10px;
+}

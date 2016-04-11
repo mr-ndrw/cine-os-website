@@ -3,15 +3,23 @@
 angular.module('cineos')
     .controller('CreateReservationController', function($scope){
 
+        var apiaddress = 'http://10.211.55.3:1218';
+
+        $scope.apiaddress = apiaddress;
+
         var reservationModel = {
-            email: "user@example.com",
-            password: "password",
-            region: regions[0],
-            cinema: cinemas[0]
+            login: {email: '', password: ''},
+            clientid: -1,
+            region: null,
+            cinema: null,
+            projection: null,
+            film: null,
+            seat: null
         };
 
         $scope.reservationModel = reservationModel;
 
+        $scope.seats = null;
         $scope.SlideChangeButtonClick = function (transitionClass) {
             $scope.transitionClass = transitionClass;
             window.scrollTo(0,0);
@@ -20,7 +28,7 @@ angular.module('cineos')
         //  watches
         $scope.$watch('reservationModel.cinema', function(){
             if($scope.reservationModel.cinema != null)
-                $scope.filmsForChosenCinema = getFilmsForCinema($scope.reservationModel.cinema, projections, films);
+                $scope.filmsForChosenCinema = films;
         });
     });
 

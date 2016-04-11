@@ -8,31 +8,30 @@
                 <div flex-item>
                     <div flex-container="row" flex-gutter="24">
                         <div flex-item>
-                            <lx-select ng-model="reservationModel.region"
-                                       placeholder="Regions"
+                            <lx-select ng-model="reservationModel.region" placeholder="Region"
                                        choices="regions"
                                        change="RegionCbSelect(newValue, oldValue)"
                                        floating-label>
                                 <lx-select-selected>
-                                    {{ $selected.regionName }}
+                                    {{ $selected.Name }}
                                 </lx-select-selected>
 
                                 <lx-select-choices>
-                                    {{ $choice.regionName }}
+                                    {{ $choice.Name }}
                                 </lx-select-choices>
                             </lx-select>
                         </div>
                         <div flex-item>
                             <lx-select ng-model="reservationModel.cinema"
-                                       placeholder="Cinemas"
+                                       placeholder="Cinema"
                                        choices="cinemasInRegion"
                                        floating-label>
                                 <lx-select-selected>
-                                    {{ $selected.cinemaName }}, {{ $selected.address.city}}
+                                    {{ $selected.Name }}, {{ $selected.Address}}
                                 </lx-select-selected>
 
                                 <lx-select-choices>
-                                    {{ $choice.cinemaName }}, {{ $choice.address.street}} - {{ $choice.address.city}}
+                                    {{ $choice.Name }}, {{ $choice.Address}}
                                 </lx-select-choices>
                             </lx-select>
                         </div>
@@ -43,7 +42,7 @@
             <div class="slide-button-section">
                 <div layout="row">
                     <div class="left-section" flex="33">
-                        <button class="btn btn--l btn--raised bgc-pink-500"
+                        <button class="btn btn--l btn--flat btn--pink"
                                 lx-ripple="pink-100"
                                 ui-sref="createReservation.userAuthorization"
                                 ng-click="SlideChangeButtonClick('slide-right')">Login
@@ -51,11 +50,11 @@
                     </div>
                     <div flex="33"></div>
                     <div class="right-section" flex="33">
-                        <button class="btn btn--l btn--raised bgc-pink-500"
+                        <button class="btn btn--xl btn--raised btn--pink"
                                 lx-ripple="pink-100"
                                 ng-click="SlideChangeButtonClick('slide-left')"
                                 ui-sref="createReservation.filmSelection"
-                                ng-disabled="isEverythingSelected">Films
+                                ng-disabled="reservationModel.cinema == null">Films
                         </button>
                     </div>
                 </div>

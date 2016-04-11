@@ -1,0 +1,51 @@
+<div class="slide-70-wrapper">
+    <div class="slide" layout layout-align="center center">
+        <div class="slide-title">
+            <span class="fs-display-2 display-block">Projection</span>
+            <span class="fs-subhead display-block">Choose projection range and projection</span>
+        </div>
+        <div class="slide-content">
+            <lx-date-picker model="fromDate"
+                            label="From date"
+                            locale="en"></lx-date-picker>
+
+            <lx-date-picker model="toDate"
+                            label="To date"
+                            locale="en"></lx-date-picker>
+
+            <lx-select ng-model="reservationModel.projection"
+                       placeholder="Choose projection"
+                       choices="projections"
+                       floating-label>
+                <lx-select-selected>
+                    {{ $selected.DateTime | date:"d MMMM 'at' HH:mm"}}
+                </lx-select-selected>
+
+                <lx-select-choices>
+                    {{ $choice.DateTime | date:"d MMMM 'at' HH:mm"}}
+                </lx-select-choices>
+            </lx-select>
+        </div>
+        <div class="slide-button-section">
+            <div layout="row">
+                <div class="left-section" flex="33">
+                    <button class="btn btn--l btn--flat btn--pink"
+                            lx-ripple="pink-100"
+                            ui-sref="createReservation.filmSelection"
+                            ng-click="SlideChangeButtonClick('slide-right')">Films
+                    </button>
+                </div>
+                <div flex="33"></div>
+                <div class="right-section" flex="33">
+                    <button class="btn btn--xl btn--raised btn--pink"
+                            lx-ripple="pink-100"
+                            ng-click="SlideChangeButtonClick('slide-left')"
+                            ui-sref="createReservation.seatSelection"
+                            ng-disabled="reservationModel.projection == null">Seats
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

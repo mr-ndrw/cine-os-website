@@ -1,0 +1,90 @@
+<div class="slide-70-wrapper">
+    <div class="slide" layout layout-align="center center">
+        <div class="slide-title">
+            <span class="fs-display-2 display-block">Summary</span>
+            <span class="fs-subhead display-block">Is everything alright?</span>
+        </div>
+        <div class="slide-content">
+            <table>
+                <tr>
+                    <td>
+                        <h3>Cinema</h3>
+                    </td>
+                    <td>
+                        <p class="p++">
+                            {{ reservationModel.cinema.Name + ', ' + reservationModel.cinema.Address}}
+                        </p>
+                    </td>
+                    <td>
+                        <button class="btn btn--flat btn--pink"
+                                ui-sref="createReservation.cinemaSelection"
+                                ng-click="changeCinema()">Change</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Film</h3>
+                    </td>
+                    <td>
+                        <p class="p++">
+                            {{ reservationModel.film.Title }}
+                        </p>
+                    </td>
+                    <td>
+                        <button class="btn btn-m btn--flat btn--pink"
+                                ui-sref="createReservation.filmSelection"
+                                ng-click="changeFilm()">Change</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>On date</h3>
+                    </td>
+                    <td>
+                        <p class="p++">
+                            {{ reservationModel.projection.DateTime | date:"d MMMM 'at' HH:mm"}}
+                        </p>
+                    </td>
+                    <td>
+                        <button class="btn btn--flat btn--pink"
+                                ui-sref="createReservation.projectionSelection"
+                                ng-click="changeProjection()">Change</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Seat chosen</h3>
+                    </td>
+                    <td>
+                        <p class="p++">
+                            Row Number: {{ reservationModel.seat.RowNumber}}, ColumnNumber: {{ reservationModel.seat.ColumnNumber }}
+                        </p>
+                    </td>
+                    <td>
+                        <button class="btn btn--flat btn--pink"
+                                ui-sref="createReservation.seatSelection"
+                                ng-click="changeSeat()">Change</button>
+                    </td>
+                </tr>
+            </table>
+            </div>
+            <div class="slide-button-section">
+                <div layout="row">
+                    <div class="left-section" flex="33">
+                        <button class="btn btn--l btn--flat btn--pink"
+                                ui-sref="createReservation.seatSelection"
+                                ng-click="SlideChangeButtonClick('slide-right')">Seat
+                        </button>
+                    </div>
+                    <div flex="33"></div>
+                    <div class="right-section" flex="33">
+                        <button class="btn btn--xl btn--raised btn--pink"
+                                lx-ripple="pink-100"
+                                ng-click="accept()">Accept
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cineos', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'ngMaterial', 'lumx'])
+angular.module('cineos', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ui.router', 'lumx'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state('home', {
@@ -33,6 +33,21 @@ angular.module('cineos', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ng
                 url: '/film',
                 templateUrl: 'app/createReservation/filmSelection/filmSelection.html',
                 controller: 'FilmSelectionController'
+            })
+            .state('createReservation.projectionSelection',{
+                url: '/projection',
+                templateUrl: 'app/createReservation/projectionSelection/projectionSelection.html',
+                controller: 'ProjectionSelectionController'
+            })
+            .state('createReservation.seatSelection',{
+                url: '/seats',
+                templateUrl: 'app/createReservation/seatSelection/seatSelection.html',
+                controller: 'SeatSelectionController'
+            })
+            .state('createReservation.summary', {
+                url: '/summ',
+                templateUrl: 'app/createReservation/summary/summary.html',
+                controller: 'SummaryController'
             });
 
         $urlRouterProvider.otherwise('/');

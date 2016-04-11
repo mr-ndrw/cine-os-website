@@ -1,0 +1,94 @@
+<div class="slide-70-wrapper">
+    <div class="slide" layout layout-align="center center">
+        <div class="slide-title">
+            <span class="fs-display-2 display-block">Seats</span>
+            <span class="fs-subhead display-block">Choose your seats</span>
+        </div>
+        <div class="slide-content">
+            <div id="seat-pane" class="container">
+                <div id="screen">
+                    <h4>Screen</h4>
+                    <hr>
+                </div>
+                <div class="seat-row container" ng-repeat="row in seats">
+                    <div class="seat-container" ng-repeat="seat in row">
+                        <button class="btn btn--xl btn--fab btn--blue"
+                                ng-disabled="seat.Reserved"
+                                lx-ripple
+                                ng-click="seatButtonOnClick($event, seat)">
+                                <i class="mdi"
+                                   ng-class="(seat.Reserved==true) ? 'mdi-close' : 'mdi-plus'">
+                                </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div flex-container="row">
+                <div flex-item="5">
+                    <div class="seat-info">
+                        <div ng-show="reservationModel.seat == null">
+                            You didn't select a seat yet...
+                        </div>
+                        <div ng-show="reservationModel.seat != null">
+                            <h4>Your selected seat.</h4>
+                            <p>Row number: {{ (reservationModel.seat==null) ? "-" : reservationModel.seat.RowNumber }}</p>
+                            <p>Column number: {{ (reservationModel.seat==null) ? "-" : reservationModel.seat.ColumnNumber }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div flex-item="5">
+                    <table class="button-info">
+                        <tr>
+                            <td>
+                                <button class="btn btn--m btn--fab btn--blue"><i class="mdi mdi-plus"></i></button>
+                            </td>
+                            <td>
+                                - Free Seat.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn btn--m btn--fab btn--blue" disabled="disabled"><i class="mdi mdi-close"></i></button>
+                            </td>
+                            <td>
+                                - Reserved seat.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn btn--m btn--fab btn--green"><i class="mdi mdi-check"></i></button>
+                            </td>
+                            <td>
+                                - Your seat.
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="slide-button-section">
+            <div layout="row">
+                <div class="left-section" flex="33">
+                    <button class="btn btn--xl btn--flat btn--pink"
+                            lx-ripple="pink-100"
+                            ui-sref="createReservation.projectionSelection"
+                            ng-click="SlideChangeButtonClick('slide-right')">Projections
+                    </button>
+                </div>
+                <div flex="33"></div>
+                <div class="right-section" flex="33">
+                    <button class="btn btn--xl btn--raised btn--pink"
+                            lx-ripple="pink-100"
+                            ng-click=""
+                            ui-sref="createReservation.summary">Summary
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

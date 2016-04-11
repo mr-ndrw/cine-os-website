@@ -198,10 +198,118 @@ var cinemas = [{
     }
 }];
 
+var seats =[
+    [
+        {
+            Id: 1,
+            RowNumber: 1,
+            ColumnNumber: 1,
+            Reserved: false
+        },
+        {
+            Id: 2,
+            RowNumber: 1,
+            ColumnNumber: 2,
+            Reserved: false
+        },
+        {
+            Id: 3,
+            RowNumber: 1,
+            ColumnNumber: 3,
+            Reserved: false
+        },
+        {
+            Id: 4,
+            RowNumber: 2,
+            ColumnNumber: 4,
+            Reserved: false
+        }
+    ],
+    [
+        {
+            Id: 5,
+            RowNumber: 2,
+            ColumnNumber: 1,
+            Reserved: false
+        },
+        {
+            Id: 6,
+            RowNumber: 2,
+            ColumnNumber: 2,
+            Reserved: true
+        },
+        {
+            Id: 7,
+            RowNumber: 2,
+            ColumnNumber: 3,
+            Reserved: false
+        },
+        {
+            Id: 8,
+            RowNumber: 2,
+            ColumnNumber: 4,
+            Reserved: true
+        }
+    ],
+    [
+        {
+            Id: 9,
+            RowNumber: 3,
+            ColumnNumber: 1,
+            Reserved: true
+        },
+        {
+            Id: 10,
+            RowNumber: 3,
+            ColumnNumber: 2,
+            Reserved: false
+        },
+        {
+            Id: 11,
+            RowNumber: 3,
+            ColumnNumber: 3,
+            Reserved: true
+        },
+        {
+            Id: 12,
+            RowNumber: 3,
+            ColumnNumber: 4,
+            Reserved: true
+        }
+    ],
+    [
+        {
+            Id: 9,
+            RowNumber: 3,
+            ColumnNumber: 1,
+            Reserved: true
+        },
+        {
+            Id: 10,
+            RowNumber: 3,
+            ColumnNumber: 2,
+            Reserved: false
+        },
+        {
+            Id: 11,
+            RowNumber: 3,
+            ColumnNumber: 3,
+            Reserved: true
+        },
+        {
+            Id: 12,
+            RowNumber: 3,
+            ColumnNumber: 4,
+            Reserved: true
+        }
+    ]
+];
+
+
 var seats = [
-    [false, false, false, false, false],
-    [false, true, false, true, false],
-    [true, false, true, false, false],
-    [false, false, false, false, false],
-    [false, false, false, false, false]
+    [{Reserved: true},{Reserved: false},{Reserved: false},{Reserved: false},{Reserved: false}],
+    [{Reserved: false},{Reserved: false},{Reserved: false},{Reserved: false},{Reserved: false}],
+    [{Reserved: false},{Reserved: true},{Reserved: false},{Reserved: false},{Reserved: false}],
+    [{Reserved: false},{Reserved: false},{Reserved: false},{Reserved: false},{Reserved: false}],
+    [{Reserved: false},{Reserved: false},{Reserved: false},{Reserved: false},{Reserved: false}]
 ];

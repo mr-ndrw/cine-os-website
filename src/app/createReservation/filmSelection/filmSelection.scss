@@ -18,3 +18,11 @@
   background-position: center;
   background-size:cover;
 }
+
+$grayscale-rate: 90%;
+
+.gray--card{
+  -webkit-filter: grayscale($grayscale-rate);
+  -moz-filter: grayscale($grayscale-rate);
+  -o-filter: grayscale($grayscale-rate);
+}
